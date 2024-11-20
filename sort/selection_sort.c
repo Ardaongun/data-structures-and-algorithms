@@ -5,9 +5,8 @@ void selectionSort(int array[],int size){
         int minIndex = i;
 
         for(int j = i + 1 ; j < size ; j++){
-            if(array[j] < array[minIndex]){
+            if(array[j] < array[minIndex])
                 minIndex = j;
-            }
         }
 
         if(minIndex != i){
