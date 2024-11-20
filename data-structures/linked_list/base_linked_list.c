@@ -39,6 +39,37 @@ void sortedInsert(Node** head, const int data){
     current->next = newNode;
 }
 
+void deleteNode(Node** head,int value){
+    if(*head == NULL){
+        printf("List is empty.\n");
+        return;
+    }
+
+    Node* temp = *head;
+
+    if(temp != NULL && temp->data == value){
+        *head = temp->next;
+        free(temp);
+        printf("%d was deleted from the list.\n",value);
+        return;
+    }
+
+    Node* prev = NULL;
+    while(temp != NULL && temp->data != value){
+        prev = temp;
+        temp = temp->next;
+    }
+
+    if(temp == NULL){
+        printf("%d not found in the list.\n",value);
+        return;
+    }
+
+    prev->next = temp->next;
+    free(temp);
+    printf("%d was deleted from the list.\n",value);
+}
+
 void printList(Node* head){
     Node* temp = head;
     while(temp != NULL){
