@@ -16,7 +16,9 @@ int main(){
 
     printf("Please enter the number to search:");
     scanf("%d",&target);
+
     int result = linearSearch(array, size, target);
+    
     if(result != -1)
         printf("%d was found. It's index in the array is %d.\n",target,result);
     else
